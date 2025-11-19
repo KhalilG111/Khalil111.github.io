@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khalil - Portafolio Profesional</title>
+
     <style>
         * {
             margin: 0;
@@ -15,7 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0a5299 0%, #2a317f 100%);
             min-height: 100vh;
         }
 
@@ -28,7 +29,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
         }
 
         nav {
@@ -43,7 +44,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #667eea;
+            color: #0a5299;
         }
 
         nav ul {
@@ -55,24 +56,25 @@
         nav a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: 0.3s;
+            font-weight: 500;
         }
 
         nav a:hover {
-            color: #667eea;
+            color: #0a5299;
         }
 
-        /* Sección Hero */
+        /* HERO */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0a5299 0%, #2a317f 100%);
             color: white;
-            padding: 150px 2rem 100px;
+            padding: 150px 2rem 120px;
             text-align: center;
             margin-top: 60px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 1rem;
             animation: fadeInDown 0.8s ease;
         }
@@ -88,20 +90,20 @@
             display: inline-block;
             padding: 12px 30px;
             background: white;
-            color: #667eea;
+            color: #0a5299;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: all 0.3s;
+            transition: 0.3s;
             margin: 0 10px;
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
         }
 
-        /* Contenedor principal */
+        /* Contenedor */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -113,61 +115,55 @@
             padding: 80px 2rem;
             background: white;
             margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
         }
 
         section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: #333;
-            border-bottom: 3px solid #667eea;
+            color: #222;
+            border-bottom: 3px solid #0a5299;
             padding-bottom: 1rem;
             display: inline-block;
         }
 
-        /* Sección Sobre mí */
+        /* SOBRE MÍ */
         #about {
             text-align: center;
         }
 
         .about-content {
             margin-top: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
             color: #555;
         }
 
-        /* Sección Proyectos */
+        /* PROYECTOS */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .project-card {
-            background: #f8f9fa;
+            background: #f8faff;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 12px 32px rgba(10, 82, 153, 0.25);
         }
 
         .project-card h3 {
-            color: #667eea;
+            color: #0a5299;
             margin-bottom: 1rem;
             font-size: 1.5rem;
-        }
-
-        .project-card p {
-            color: #666;
-            line-height: 1.6;
         }
 
         .tech-tags {
@@ -178,17 +174,17 @@
         }
 
         .tag {
-            background: #667eea;
+            background: #0a5299;
             color: white;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
         }
 
-        /* Sección Contacto */
+        /* CONTACTO */
         #contact {
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0a5299 0%, #2a317f 100%);
             color: white;
         }
 
@@ -204,18 +200,17 @@
 
         .contact-info a {
             color: white;
-            text-decoration: none;
             margin: 0 1rem;
-            transition: color 0.3s;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
         .contact-info a:hover {
-            color: #ddd;
+            color: #dcdcdc;
         }
 
-        /* Pie de página */
         footer {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0,0,0,0.9);
             color: white;
             text-align: center;
             padding: 2rem;
@@ -224,167 +219,143 @@
 
         /* Animaciones */
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity:0; transform:translateY(-30px); }
+            to { opacity:1; transform:translateY(0); }
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity:0; transform:translateY(30px); }
+            to { opacity:1; transform:translateY(0); }
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-            }
-
-            section {
-                padding: 40px 1rem;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-            }
+        @media (max-width:768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
         }
     </style>
 </head>
-<body>
-    <!-- Encabezado y Navegación -->
-    <header>
-        <nav>
-            <div class="logo">KHALIL</div>
-            <ul>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Sección Hero -->
-    <section class="hero">
-        <h1>¡Bienvenido a mi Portafolio!</h1>
-        <p>Profesional dedicado a crear soluciones innovadoras y sostenibles</p>
-        <a href="#projects" class="btn">Ver mis Proyectos</a>
-        <a href="#contact" class="btn">Contactarme</a>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">KHALIL</div>
+        <ul>
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<section class="hero">
+    <h1>¡Bienvenido a mi Portafolio!</h1>
+    <p>Marketing · Fotografía · Tecnología · Redes Sociales</p>
+    <a href="#projects" class="btn">Ver Proyectos</a>
+    <a href="#contact" class="btn">Contactarme</a>
+</section>
+
+
+<div class="container">
+
+    <!-- SOBRE MÍ -->
+    <section id="about">
+        <h2>Sobre mí</h2>
+        <div class="about-content">
+            <p>Soy estudiante de Negocios Digitales con experiencia en marketing, contenido, fotografía, atención comercial y tecnología. He colaborado con empresas como Transport Oruat Logistic, Torino Glass y Salu Design Dental.</p>
+            <p style="margin-top: 1rem;">Desarrollo estrategias para crecimiento digital, diseño contenido visual, gestiono redes, realizo fotografía profesional y participo en proyectos de programación y UX.</p>
+        </div>
     </section>
 
-    <!-- Contenedor Principal -->
-    <div class="container">
-        <!-- Sección Sobre mí -->
-        <section id="about">
-            <h2>Sobre mí</h2>
-            <div class="about-content">
-                <p>Soy un profesional con experiencia en investigación, análisis de sostenibilidad y desarrollo de soluciones innovadoras. Mi pasión es trabajar en proyectos que generen impacto positivo en las organizaciones y el medio ambiente.</p>
-                <p style="margin-top: 1rem;">Cuento con habilidades en análisis de Contenido, investigación cualitativa, desarrollo web y gestión de proyectos. Me caracterizo por mi compromiso con la excelencia y la búsqueda continua de mejora.</p>
-            </div>
-        </section>
+    <!-- PROYECTOS -->
+    <section id="projects">
+        <h2>Mis Proyectos</h2>
 
-        <!-- Sección Proyectos -->
-        <section id="projects">
-            <h2>Mis Proyectos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>📱 Gestión de Redes y Marketing Digital</h3>
-                    <p>Creación, administración y crecimiento de redes sociales empresariales. Estrategias de contenido, campañas de pago, análisis de métricas y diseño visual para múltiples marcas.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Marketing Digital</span>
-                        <span class="tag">Sostenibilidad</span>
-                        <span class="tag">Reporting</span>
-                    </div>
-                </div>
+        <div class="projects-grid">
 
-                <div class="project-card">
-                    <h3>⚡ Estudios</h3>
-                    <p>Investigación sobre sistemas de energía limpia y renovable, análisis de modelos de suministro y evaluación de impacto ambiental.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Energía Renovable</span>
-                        <span class="tag">Investigación</span>
-                        <span class="tag">Análisis</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>🎓 Investigación Cualitativa</h3>
-                    <p>Metodología descriptiva-interpretativa aplicada en investigaciones académicas usando entrevistas semi-estructuradas y análisis paradigmático.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Metodología</span>
-                        <span class="tag">Investigación</span>
-                        <span class="tag">Análisis</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>🎨 Sector Artístico-Cultural</h3>
-                    <p>Marco contextual y análisis del sector artístico y cultural en América Latina, explorando dinámicas organizacionales y transformación Visual.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Análisis Cultural</span>
-                        <span class="tag">Contexto</span>
-                        <span class="tag">Transformación Visual</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>📊 Análisis de Contenido Corporativos</h3>
-                    <p>Extracción y análisis de Contenido financieros y operacionales de empresas, con preparación de presentaciones ejecutivas y visualización de resultados.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Data Analysis</span>
-                        <span class="tag">Reporting</span>
-                        <span class="tag">Excel</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>🌱 Auditoría Ambiental</h3>
-                    <p>Creación, administración y Programación de redes sociales UX/UIes. SQLs de contenido, campañas de pago, análisis de métricas y diseño visual para múltiples marcas., gestión de Community Manager y prácticas de reciclaje en organizaciones con enfoque en cumplimiento normativo.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Auditoría</span>
-                        <span class="tag">Community Manager</span>
-                        <span class="tag">Contenido</span>
-                    </div>
+            <div class="project-card">
+                <h3>📱 Gestión de Redes y Marketing Digital</h3>
+                <p>Creación de contenido, crecimiento de redes empresariales, campañas, diseño visual y análisis de métricas.</p>
+                <div class="tech-tags">
+                    <span class="tag">Marketing Digital</span>
+                    <span class="tag">Community Manager</span>
+                    <span class="tag">Contenido</span>
                 </div>
             </div>
-        </section>
 
-        <!-- Sección Contacto -->
-        <section id="contact">
-            <h2>¡Ponte en Contacto!</h2>
-            <div class="contact-info">
-                <p>Te invito a que me contactes si tienes interés en colaborar o conocer más sobre mis proyectos.</p>
-                <p style="margin-top: 1.5rem;">
-                    <a href="https://github.com/KhalilG111" target="_blank">GitHub</a> |
-                    <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
-                    <a href="mailto:tu-email@example.com">Email</a>
-                </p>
+            <div class="project-card">
+                <h3>🚛 Comunicación Digital — Transport Oruat Logistic</h3>
+                <p>Gestión de redes, diseño de contenido, fotografías, campañas y posicionamiento de marca del sector transporte.</p>
+                <div class="tech-tags">
+                    <span class="tag">Logística</span>
+                    <span class="tag">Branding</span>
+                    <span class="tag">Contenido</span>
+                </div>
             </div>
-        </section>
-    </div>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 Khalil - Todos los derechos reservados. Portafolio creado con HTML, CSS y JavaScript.</p>
-    </footer>
+            <div class="project-card">
+                <h3>🪟 Redes y Contenido — Torino Glass</h3>
+                <p>Diseño visual y contenido estratégico para una empresa de vidrio y aluminio. Fotos, reels y campañas.</p>
+                <div class="tech-tags">
+                    <span class="tag">Fotografía</span>
+                    <span class="tag">Diseño</span>
+                    <span class="tag">Social Media</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>😁 Contenido para Salud — Salu Design Dental</h3>
+                <p>Contenido educativo, campañas digitales y diseño visual para clínica dental premium.</p>
+                <div class="tech-tags">
+                    <span class="tag">Salud</span>
+                    <span class="tag">Marketing</span>
+                    <span class="tag">Creatividad</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>📸 Fotografía Profesional — Estudio ZUVA</h3>
+                <p>Dirección creativa, sesiones fotográficas, edición y captura profesional en estudio.</p>
+                <div class="tech-tags">
+                    <span class="tag">Fotografía</span>
+                    <span class="tag">Edición</span>
+                    <span class="tag">Creatividad</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>💻 Desarrollo Web / UX / SQL — Krait</h3>
+                <p>Prácticas de programación, diseño responsivo, consultas SQL, UX e interfaces funcionales.</p>
+                <div class="tech-tags">
+                    <span class="tag">Programación</span>
+                    <span class="tag">UX/UI</span>
+                    <span class="tag">SQL</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <p>¿Te interesa colaborar? ¡Estoy listo para nuevos proyectos!</p>
+            <p style="margin-top: 1.5rem;">
+                <a href="https://github.com/KhalilG111" target="_blank">GitHub</a> |
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
+                <a href="mailto:khalitosnava111@gmail.com">Email</a>
+            </p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Khalil - Todos los derechos reservados.</p>
+</footer>
+
 </body>
 </html>
