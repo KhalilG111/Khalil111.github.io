@@ -1,359 +1,381 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khalil - Portafolio Profesional</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalil Nava - Portafolio Profesional</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f3f6ff;
+        color: #333;
+        overflow-x: hidden;
+    }
+    a { text-decoration: none; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #0a5299 0%, #2a317f 100%);
-            min-height: 100vh;
-        }
+    /* HEADER */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 2000;
+        background: rgba(0,0,0,0.85);
+        padding: 1rem 0;
+        backdrop-filter: blur(6px);
+    }
+    nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #0a92ff;
+    }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: white; transition: 0.3s; }
+    nav a:hover { color: #4db8ff; }
 
-        /* HEADER */
-        header {
-            background: rgba(0,0,0,0.9);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-        }
+    /* GRADIENT ANIMADO */
+    @keyframes movingGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+    /* HERO */
+    .hero {
+        padding: 140px 1.5rem 100px;
+        margin-top: 60px;
+        background: linear-gradient(130deg,
+            #0a5299,
+            #1d3f8e,
+            #2a317f,
+            #144e9b,
+            #0a5299);
+        background-size: 400% 400%;
+        animation: movingGradient 15s ease infinite;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #0a5299;
-        }
+    /* PARTICLES */
+    .particle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: rgba(255,255,255,0.25);
+        border-radius: 50%;
+        animation: floatParticle 6s infinite ease-in-out;
+    }
+    @keyframes floatParticle {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        50% { transform: translateY(-60px) scale(1.6); opacity: .5; }
+        100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+    .hero h1 { font-size: 3.4rem; font-weight: 800; letter-spacing: 3px; }
+    .hero h2 { font-size: 1.6rem; opacity: .9; margin-top: .5rem; }
+    .hero p {
+        max-width: 680px;
+        margin: 1rem auto;
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-            font-weight: 500;
-        }
+    /* BADGES */
+    .hero-badges {
+        margin-top: 1.8rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: .7rem;
+    }
+    .hero-badge {
+        padding: .45rem 1rem;
+        background: rgba(255,255,255,0.15);
+        border-radius: 999px;
+        backdrop-filter: blur(4px);
+        transition: .3s;
+        font-size: .85rem;
+    }
+    .hero-badge:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
 
-        nav a:hover {
-            color: #0a5299;
-        }
+    /* BOTONES */
+    .hero-actions {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .btn-primary {
+        background: white;
+        color: #0a5299;
+        padding: .8rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 600;
+        transition: .3s;
+        box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-4px); }
+    .btn-secondary {
+        border: 2px solid white;
+        padding: .8rem 1.6rem;
+        border-radius: 999px;
+        color: white;
+        transition: .3s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.15); }
 
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, #0a5299 0%, #2a317f 100%);
-            color: white;
-            padding: 150px 2rem 120px;
-            text-align: center;
-            margin-top: 60px;
-        }
+    /* FOTO */
+    .hero-photo { margin-top: 40px; display: flex; justify-content: center; }
+    .hero-photo-inner {
+        padding: 8px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(6px);
+        animation: floatPhoto 4s ease-in-out infinite;
+    }
+    @keyframes floatPhoto {
+        0% { transform: translateY(0px);}
+        50% { transform: translateY(-10px);}
+        100% { transform: translateY(0px);}
+    }
+    .hero-photo img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid white;
+        object-fit: cover;
+    }
 
-        .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1rem;
-        }
+    /* CONTENEDOR GENERAL */
+    main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 50px 1.5rem;
+    }
+    section { margin-bottom: 50px; }
 
-        .hero p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-        }
+    .title { font-size: 2rem; color: #0a5299; font-weight: 700; margin-bottom: 1rem; }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: white;
-            color: #0a5299;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
-            margin: 1rem 10px 0;
-        }
+    /* TARJETAS */
+    .card {
+        background: white;
+        padding: 1.7rem;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        margin-bottom: 1.4rem;
+    }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-        }
+    .item-title { font-weight: 700; }
+    .item-meta { color: #0a5299; font-size: .9rem; margin-bottom: .2rem; }
 
-        /* CONTENEDOR */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+    /* CONTACTO */
+    .contact-card {
+        background: linear-gradient(135deg,#0a5299,#2a317f);
+        color: white;
+        padding: 2rem;
+        border-radius: 18px;
+        position: relative;
+        overflow: hidden;
+    }
 
-        /* SECCIONES */
-        section {
-            padding: 80px 2rem;
-            background: white;
-            margin: 2rem 0;
-            border-radius: 12px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
-        }
+    /* CONTACT BUTTON REWORK */
+    .contact-pill {
+        padding: 0.6rem 1.2rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.18);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-block;
+        margin-right: 0.5rem;
+        transition: 0.3s ease;
+        border: 1px solid rgba(255,255,255,0.35);
+    }
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid #0a5299;
-            padding-bottom: 1rem;
-            display: inline-block;
-        }
+    .contact-pill:hover {
+        background: rgba(255,255,255,0.28);
+        transform: translateY(-3px);
+    }
 
-        /* ABOUT */
-        #about {
-            text-align: center;
-        }
+    /* SKILL PILL BUTTONS */
+    .skill-pill {
+        background: #0a5299;
+        color: #ffffff;
+        padding: 0.6rem 1.2rem;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0.3rem;
+        transition: 0.3s;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
 
-        .about-content {
-            margin-top: 2rem;
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: #555;
-        }
+    .skill-pill:hover {
+        transform: translateY(-3px);
+        background: #0c6dd4;
+    }
 
-        /* PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .skill-icon {
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+    }
 
-        .project-card {
-            background: #f8faff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 32px rgba(10,82,153,0.25);
-        }
-
-        .project-card h3 {
-            color: #0a5299;
-            margin-bottom: 1rem;
-        }
-
-        .project-image img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .tech-tags {
-            margin-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background: #0a5299;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        /* CONTACTO */
-        #contact {
-            text-align: center;
-            background: linear-gradient(135deg, #0a5299 0%, #2a317f 100%);
-            color: white;
-        }
-
-        #contact h2 {
-            color: white;
-            border-bottom: 3px solid white;
-        }
-
-        .contact-info {
-            margin-top: 2rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-info a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: #dcdcdc;
-        }
-
-        footer {
-            background: rgba(0,0,0,0.9);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-    </style>
+</style>
 </head>
-
 <body>
 
 <header>
     <nav>
-        <div class="logo">KHALIL</div>
+        <div class="logo">KHALIL NAVA</div>
         <ul>
-            <li><a href="#about">Sobre mí</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="https://wa.me/5510299061" target="_blank">Contactarme</a></li>
+            <li><a href="#experience">Experiencia</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="https://wa.me/5510299061" target="_blank">WhatsApp</a></li>
         </ul>
     </nav>
 </header>
 
+<!-- HERO ANIMADO -->
 <section class="hero">
-    <h1>¡Bienvenido a mi Portafolio!</h1>
-    <p>Marketing · Fotografía · Tecnología · Contenido Profesional</p>
-    <a href="#projects" class="btn">Ver Proyectos</a>
-    <a href="https://wa.me/5510299061" class="btn" target="_blank">Contactarme</a>
+
+    <!-- partículas -->
+    <div class="particle" style="top:20%; left:10%; animation-delay:0s;"></div>
+    <div class="particle" style="top:60%; left:20%; animation-delay:1s;"></div>
+    <div class="particle" style="top:40%; left:70%; animation-delay:2s;"></div>
+    <div class="particle" style="top:80%; left:50%; animation-delay:3s;"></div>
+
+    <h1>PORTAFOLIO</h1>
+    <h2>Negocios Digitales · Marketing · Contenido</h2>
+
+    <p>
+        Estudiante de la ESCA con enfoque en negocios digitales, creación de contenido 
+        y tecnología, construyendo proyectos funcionales, profesionales y atractivos.
+    </p>
+
+    <div class="hero-badges">
+        <span class="hero-badge">23 años</span>
+        <span class="hero-badge">CDMX · México</span>
+        <span class="hero-badge">Contenido Digital</span>
+    </div>
+
+    <div class="hero-actions">
+        <a href="https://wa.me/5510299061" target="_blank" class="btn-primary">Escríbeme por WhatsApp</a>
+        <a href="#experience" class="btn-secondary">Ver experiencia</a>
+    </div>
+
+    <div class="hero-photo">
+        <div class="hero-photo-inner">
+            <img src="img/foto-perfil.jpg" alt="Foto de Khalil Nava">
+        </div>
+    </div>
+
 </section>
 
+<main>
 
-<div class="container">
+    <!-- EXPERIENCIA -->
+    <section id="experience">
+        <h2 class="title">Experiencia</h2>
 
-    <!-- SOBRE MÍ -->
-    <section id="about">
-        <h2>Sobre mí</h2>
-        <div class="about-content">
-            <p>Estudiante de Negocios Digitales con experiencia en marketing, contenido, fotografía, ventas y tecnología. Apasionado por crear contenido de valor, construir marcas personales y desarrollar estrategias digitales con enfoque profesional.</p>
+        <div class="card">
+            <div class="item-title">Creación de Contenido y Publicidad Digital</div>
+            <div class="item-meta">2025 – Actualidad</div>
+            <p>Gestión de redes, diseño visual, reels, edición, campañas y branding.</p>
+        </div>
+
+        <div class="card">
+            <div class="item-title">Fotógrafo — Estudio ZUVA</div>
+            <div class="item-meta">2024</div>
+            <p>Sesiones fotográficas profesionales, iluminación y edición.</p>
+        </div>
+
+        <div class="card">
+            <div class="item-title">Emprendimiento de Ropa — Khalil Playeras</div>
+            <div class="item-meta">2022 – 2023</div>
+            <p>Diseño, impresión y venta de playeras personalizadas.</p>
+        </div>
+
+        <div class="card">
+            <div class="item-title">Área de Programación — Krait</div>
+            <div class="item-meta">2021</div>
+            <p>Prácticas en desarrollo web, UX y bases de datos.</p>
+        </div>
+
+        <div class="card">
+            <div class="item-title">Vendedor — Visión y Logística</div>
+            <div class="item-meta">2019 – 2020</div>
+            <p>Atención a clientes, ventas y operación de eventos.</p>
         </div>
     </section>
 
-    <!-- PROYECTOS -->
-    <section id="projects">
-        <h2>Mis Proyectos</h2>
+    <!-- EDUCACIÓN -->
+    <section id="education">
+        <h2 class="title">Educación</h2>
 
-        <div class="projects-grid">
+        <div class="card">
+            <div class="item-title">ESCA — Escuela Superior de Comercio y Administración</div>
+            <div class="item-meta">2022 – Actualidad</div>
+            <p>Licenciatura en Negocios Digitales</p>
+        </div>
+    </section>
 
-            <!-- CREACIÓN DE CONTENIDO Y PUBLICIDAD -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="img/contenido.jpg" alt="Creación de contenido">
-                </div>
-                <h3>📱 Creación de Contenido y Publicidad Digital</h3>
-                <p>Desarrollo de contenido visual, fotografía, videos, publicidad digital, reels, diseño, branding y manejo de redes.</p>
-                <div class="tech-tags">
-                    <span class="tag">Contenido</span>
-                    <span class="tag">Publicidad</span>
-                    <span class="tag">Social Media</span>
-                </div>
-            </div>
+    <!-- HABILIDADES -->
+    <section id="skills">
+        <h2 class="title">Habilidades</h2>
 
-            <!-- MARCA PERSONAL -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="img/marca-personal.jpg" alt="Marca personal">
-                </div>
-                <h3>🧕‍♂️ Emprendimiento de Marca Personal</h3>
-                <p>Construcción de mi marca personal con estrategias de contenido, storytelling, posicionamiento y presencia digital.</p>
-                <div class="tech-tags">
-                    <span class="tag">Marca Personal</span>
-                    <span class="tag">Branding</span>
-                    <span class="tag">Redes Sociales</span>
-                </div>
-            </div>
-
-            <!-- VISIÓN Y LOGÍSTICA -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="img/ventas.jpg" alt="Ventas comerciales">
-                </div>
-                <h3>🛍️ Vendedor Comercial — Visión y Logística</h3>
-                <p>Ventas, atención a clientes, operación en eventos, organización de punto de venta y estrategias comerciales.</p>
-                <div class="tech-tags">
-                    <span class="tag">Ventas</span>
-                    <span class="tag">Atención al Cliente</span>
-                    <span class="tag">Operación</span>
-                </div>
-            </div>
-
-            <!-- FOTOGRAFÍA PROFESIONAL -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="img/foto.jpg" alt="Fotografía profesional">
-                </div>
-                <h3>📸 Fotografía Profesional</h3>
-                <p>Dirección creativa, sesiones fotográficas, iluminación, edición profesional y proyectos comerciales.</p>
-                <div class="tech-tags">
-                    <span class="tag">Fotografía</span>
-                    <span class="tag">Edición</span>
-                    <span class="tag">Creatividad</span>
-                </div>
-            </div>
-
-            <!-- PROGRAMACIÓN / UX -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="img/code.jpg" alt="Programación y UX">
-                </div>
-                <h3>💻 Desarrollo Web / UX / SQL</h3>
-                <p>Prácticas en programación, diseño responsivo, bases de datos SQL, consultas y diseño UX/UI.</p>
-                <div class="tech-tags">
-                    <span class="tag">Programación</span>
-                    <span class="tag">UX/UI</span>
-                    <span class="tag">SQL</span>
-                </div>
-            </div>
-
+        <div class="card">
+            <div class="skill-pill"><span class="skill-icon"></span> Photoshop</div>
+            <div class="skill-pill"><span class="skill-icon"></span> Illustrator</div>
+            <div class="skill-pill"><span class="skill-icon"></span> Excel</div>
+            <div class="skill-pill"><span class="skill-icon"></span> Canva</div>
+            <div class="skill-pill"><span class="skill-icon"></span> HTML / CSS</div>
+            <div class="skill-pill"><span class="skill-icon"></span> Redes Sociales</div>
         </div>
     </section>
 
     <!-- CONTACTO -->
     <section id="contact">
-        <h2>Contacto</h2>
-        <div class="contact-info">
-            <p>¿Te interesa colaborar o necesitas contenido profesional? ¡Estoy disponible!</p>
+        <h2 class="title">Contacto</h2>
 
-            <p style="margin-top: 1.5rem;">📞 <strong>55 1029 9061</strong><br>
-            ✉️ <strong>khalilplayerasmx@gmail.com</strong>
-            </p>
+        <div class="contact-card">
+            <p><strong>Email:</strong> khalilplayerasmx@gmail.com</p>
+            <p><strong>WhatsApp:</strong> 55 1029 9061</p>
+            <p><strong>Ubicación:</strong> CDMX, México</p>
 
-            <p style="margin-top: 1.5rem;">
-                <a href="https://wa.me/5510299061" target="_blank">WhatsApp</a> |
-                <a href="https://instagram.com" target="_blank">Instagram</a> |
-                <a href="mailto:khalilplayerasmx@gmail.com">Email</a>
-            </p>
+            <br>
+
+            <a href="https://wa.me/5510299061" target="_blank" class="contact-pill">WhatsApp</a>
+            <a href="mailto:khalilplayerasmx@gmail.com" class="contact-pill">Enviar correo</a>
+            <a href="https://instagram.com" target="_blank" class="contact-pill">Instagram</a>
         </div>
     </section>
 
-</div>
+</main>
 
-<footer>
-    <p>&copy; 2025 Khalil - Todos los derechos reservados.</p>
+<footer style="text-align:center; padding:20px; background:#0a1c3a; color:white;">
+    © 2025 Khalil Nava — Portafolio Profesional
 </footer>
+
+<script>
+console.log("Animaciones dinámicas activas ✔");
+</script>
 
 </body>
 </html>
